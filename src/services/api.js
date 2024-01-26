@@ -97,4 +97,48 @@ export const deleteResident = (id, token) => {
   });
 };
 
+// Barangay Official-related API functions
+
+export const fetchBarangayOfficials = (token) => {
+  return axios.get(`${API_URL}/barangay-officials`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const createBarangayOfficial = (officialData, token) => {
+  return axios.post(`${API_URL}/barangay-officials`, officialData, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const getBarangayOfficialById = (id, token) => {
+  return axios.get(`${API_URL}/barangay-officials/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const updateBarangayOfficial = (id, officialData, token) => {
+  return axios.put(`${API_URL}/barangay-officials/${id}`, officialData, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const deleteBarangayOfficial = (id, token) => {
+  return axios.delete(`${API_URL}/barangay-officials/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
 // Add more functions to interact with other endpoints

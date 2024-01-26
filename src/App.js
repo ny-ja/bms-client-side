@@ -8,6 +8,9 @@ import UpdateUser from './pages/users/UpdateUser';
 import ResidentsIndex from './pages/residents/ResidentsIndex';
 import CreateResident from './pages/residents/CreateResident';
 import UpdateResident from './pages/residents/UpdateResident';
+import BarangayOfficialsIndex from './pages/barangay_officials/BarangayOfficialsIndex';
+import CreateBarangayOfficial from './pages/barangay_officials/CreateBarangayOfficial';
+import UpdateBarangayOfficial from './pages/barangay_officials/UpdateBarangayOfficial';
 
 const App = () => {
   return (
@@ -24,6 +27,10 @@ const App = () => {
         <Route path="/residents" element={<ResidentsIndex />} />
         <Route path="/residents/create" element={<CreateResident />} />
         <Route path="/residents/update/:residentId" element={<UpdateResident />} />
+
+        <Route path="/barangay-officials" element={<BarangayOfficialsIndex />} />
+        <Route path="/barangay-officials/create" element={<CreateBarangayOfficial />} />
+        <Route path="/barangay-officials/update/:officialId" element={<UpdateBarangayOfficial />} />
       </Routes>
     </Router>
   );
