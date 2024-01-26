@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchBarangayOfficials, deleteBarangayOfficial } from "../../services/api";
+import {
+  fetchBarangayOfficials,
+  deleteBarangayOfficial,
+} from "../../services/api";
 import Header from "../../components/Header";
 
 const BarangayOfficials = () => {
@@ -10,10 +13,10 @@ const BarangayOfficials = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     fetchBarangayOfficials(token)
-      .then(response => {
+      .then((response) => {
         setOfficials(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error fetching barangay officials:", error);
       });
   }, []);
@@ -27,51 +30,65 @@ const BarangayOfficials = () => {
 
     if (window.confirm("Are you sure you want to delete this official?")) {
       await deleteBarangayOfficial(officialId, token);
-      // Reload the list after deletion
-      fetchBarangayOfficials(token).then(response => {
+      fetchBarangayOfficials(token).then((response) => {
         setOfficials(response.data);
       });
     }
   };
 
   return (
-    <div>
+    <div className="bg-gray-100 min-h-screen">
       <Header />
-      <h2>Barangay Officials List</h2>
-      <button onClick={handleCreateButtonClick}>Create Official</button>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Term Start</th>
-            <th>Term End</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {officials.map((official) => (
-            <tr key={official.id}>
-              <td>
-                {official.firstName} {official.middleName} {official.lastName}
-              </td>
-              <td>{official.position}</td>
-              <td>{official.termStart}</td>
-              <td>{official.termEnd}</td>
-              <td>
-                <button
-                  onClick={() => navigate(`/barangay-officials/update/${official.id}`)}
-                >
-                  Update
-                </button>
-                <button onClick={() => handleDelete(official.id)}>
-                  Delete
-                </button>
-              </td>
+      <div className="container mx-auto p-6">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">
+          Barangay Officials List
+        </h2>
+        <button
+          onClick={handleCreateButtonClick}
+          className="mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Create Official
+        </button>
+        <table className="min-w-full table-auto shadow-md rounded">
+          <thead className="bg-gray-800 text-white">
+            <tr>
+              <th className="px-4 py-2">Name</th>
+              <th className="px-4 py-2">Position</th>
+              <th className="px-4 py-2">Term Start</th>
+              <th className="px-4 py-2">Term End</th>
+              <th className="px-4 py-2">Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className="bg-white">
+            {officials.map((official) => (
+              <tr key={official.id} className="border-b">
+                <td className="px-4 py-2">
+                  {official.firstName} {official.middleName} {official.lastName}
+                </td>
+                <td className="px-4 py-2">{official.position}</td>
+                <td className="px-4 py-2">{official.termStart}</td>
+                <td className="px-4 py-2">{official.termEnd}</td>
+                <td className="px-4 py-2">
+                  <button
+                    onClick={() =>
+                      navigate(`/barangay-officials/update/${official.id}`)
+                    }
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-3 rounded mr-2"
+                  >
+                    Update
+                  </button>
+                  <button
+                    onClick={() => handleDelete(official.id)}
+                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

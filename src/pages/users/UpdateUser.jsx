@@ -31,10 +31,9 @@ const UpdateUser = () => {
     const token = localStorage.getItem("token");
     try {
       await updateUser(userId, userData, token);
-      navigate("/users"); // Redirect to the users list after successful update
+      navigate("/users");
     } catch (err) {
       console.error("Error updating user:", err.response || err);
-      // Handle errors (e.g., display error message)
     }
   };
 
@@ -43,32 +42,54 @@ const UpdateUser = () => {
   };
 
   return (
-    <div>
+    <div className="bg-gray-100 min-h-screen">
       <Header />
-      <h1>Update User</h1>
-      <form onSubmit={handleSubmit}>
-        {/* Name field */}
-        <div>
-          <label>Name:</label>
-          <input
-            type="text"
-            name="name"
-            value={userData.name}
-            onChange={handleChange}
-          />
-        </div>
-        {/* Email field */}
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={userData.email}
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit">Update User</button>
-      </form>
+      <div className="container mx-auto p-6">
+        <h1 className="text-2xl font-bold text-gray-800 mb-4">Update User</h1>
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        >
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="name"
+            >
+              Name:
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="name"
+              type="text"
+              name="name"
+              value={userData.name}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Email:
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="email"
+              type="email"
+              name="email"
+              value={userData.email}
+              onChange={handleChange}
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Update User
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

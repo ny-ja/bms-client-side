@@ -15,7 +15,6 @@ const Users = () => {
     const token = localStorage.getItem("token");
     fetchUsers(token)
       .then((response) => {
-        // Filter out users with isAdmin = true
         const nonAdminUsers = response.data.filter((user) => !user.isAdmin);
         setUsers(nonAdminUsers);
       })
@@ -25,46 +24,60 @@ const Users = () => {
   };
 
   const handleCreateButtonClick = () => {
-    navigate("/users/create"); // Navigate to the Create User page
+    navigate("/users/create");
   };
 
   const handleDelete = async (userId) => {
     const token = localStorage.getItem("token");
-    
     if (window.confirm("Are you sure you want to delete this user?")) {
       await deleteUser(userId, token);
-      loadUsers(); // Reload the user list after deletion
+      loadUsers();
     }
   };
 
   return (
-    <div>
+    <div className="bg-gray-100 min-h-screen">
       <Header />
-      <h2>Users List</h2>
-      <button onClick={handleCreateButtonClick}>Create User</button>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Action</th> {/* New header for actions */}
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <tr key={user.id}>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>
-                <button onClick={() => navigate(`/users/update/${user.id}`)}>
-                  Update
-                </button>
-                <button onClick={() => handleDelete(user.id)}>Delete</button>
-              </td>
+      <div className="container mx-auto p-6">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Users List</h2>
+        <button
+          onClick={handleCreateButtonClick}
+          className="mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Create User
+        </button>
+        <table className="min-w-full table-auto">
+          <thead className="bg-gray-800 text-white">
+            <tr>
+              <th className="px-4 py-2">Name</th>
+              <th className="px-4 py-2">Email</th>
+              <th className="px-4 py-2">Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className="bg-white">
+            {users.map((user) => (
+              <tr key={user.id} className="border-b">
+                <td className="px-4 py-2">{user.name}</td>
+                <td className="px-4 py-2">{user.email}</td>
+                <td className="px-4 py-2">
+                  <button
+                    onClick={() => navigate(`/users/update/${user.id}`)}
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-3 rounded mr-2"
+                  >
+                    Update
+                  </button>
+                  <button
+                    onClick={() => handleDelete(user.id)}
+                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

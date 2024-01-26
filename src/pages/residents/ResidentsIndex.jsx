@@ -11,18 +11,18 @@ const Residents = () => {
   const loadResidents = useCallback(() => {
     const token = localStorage.getItem("token");
     fetchResidents(token)
-      .then(response => {
+      .then((response) => {
         const filteredResidents = searchTerm
-          ? response.data.filter(resident =>
+          ? response.data.filter((resident) =>
               resident.lastName.toLowerCase().includes(searchTerm.toLowerCase())
             )
           : response.data;
         setResidents(filteredResidents);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error fetching residents:", error);
       });
-  }, [searchTerm]); // searchTerm is a dependency now
+  }, [searchTerm]);
 
   useEffect(() => {
     loadResidents();
@@ -33,7 +33,7 @@ const Residents = () => {
   };
 
   const handleCreateButtonClick = () => {
-    navigate("/residents/create"); // Navigate to the Create Resident page
+    navigate("/residents/create");
   };
 
   const handleDelete = async (residentId) => {
@@ -41,60 +41,74 @@ const Residents = () => {
 
     if (window.confirm("Are you sure you want to delete this resident?")) {
       await deleteResident(residentId, token);
-      loadResidents(); // Reload the resident list after deletion
+      loadResidents();
     }
   };
 
   return (
-    <div>
+    <div className="bg-gray-100 min-h-screen">
       <Header />
-      <h2>Residents List</h2>
-      <input
-        type="text"
-        placeholder="Search by Last Name"
-        value={searchTerm}
-        onChange={handleSearchChange}
-      />
-      <button onClick={handleCreateButtonClick}>Create Resident</button>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Address</th>
-            <th>Contact Number</th>
-            <th>Email</th>
-            <th>Occupation</th>
-            <th>Gender</th>
-            <th>Civil Status</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {residents.map((resident) => (
-            <tr key={resident.id}>
-              <td>
-                {resident.firstName} {resident.middleName} {resident.lastName}
-              </td>
-              <td>{resident.address}</td>
-              <td>{resident.contactNumber}</td>
-              <td>{resident.email}</td>
-              <td>{resident.occupation}</td>
-              <td>{resident.gender}</td>
-              <td>{resident.civilStatus}</td>
-              <td>
-                <button
-                  onClick={() => navigate(`/residents/update/${resident.id}`)}
-                >
-                  Update
-                </button>
-                <button onClick={() => handleDelete(resident.id)}>
-                  Delete
-                </button>
-              </td>
+      <div className="container mx-auto p-6">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">
+          Residents List
+        </h2>
+        <div className="mb-4 flex justify-between items-center">
+          <button
+            onClick={handleCreateButtonClick}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Create Resident
+          </button>
+          <input
+            type="text"
+            placeholder="Search by Last Name"
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="shadow border rounded py-2 px-3 text-gray-700"
+          />
+        </div>
+        <table className="min-w-full table-auto shadow-md rounded">
+          <thead className="bg-gray-800 text-white">
+            <tr>
+              <th className="px-4 py-2">Name</th>
+              <th className="px-4 py-2">Address</th>
+              <th className="px-4 py-2">Contact Number</th>
+              <th className="px-4 py-2">Occupation</th>
+              <th className="px-4 py-2">Gender</th>
+              <th className="px-4 py-2">Civil Status</th>
+              <th className="px-4 py-2">Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className="bg-white">
+            {residents.map((resident) => (
+              <tr key={resident.id} className="border-b">
+                <td className="px-4 py-2">
+                  {resident.firstName} {resident.middleName} {resident.lastName}
+                </td>
+                <td className="px-4 py-2">{resident.address}</td>
+                <td className="px-4 py-2">{resident.contactNumber}</td>
+                <td className="px-4 py-2">{resident.occupation}</td>
+                <td className="px-4 py-2">{resident.gender}</td>
+                <td className="px-4 py-2">{resident.civilStatus}</td>
+                <td className="px-4 py-2">
+                  <button
+                    onClick={() => navigate(`/residents/update/${resident.id}`)}
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-3 rounded mr-2"
+                  >
+                    Update
+                  </button>
+                  <button
+                    onClick={() => handleDelete(resident.id)}
+                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

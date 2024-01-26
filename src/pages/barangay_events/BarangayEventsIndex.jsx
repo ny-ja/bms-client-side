@@ -10,16 +10,16 @@ const BarangayEvents = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     fetchBarangayEvents(token)
-      .then(response => {
+      .then((response) => {
         setEvents(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error fetching barangay events:", error);
       });
   }, []);
 
   const handleCreateButtonClick = () => {
-    navigate("/barangay-events/create"); // Adjust the route as needed
+    navigate("/barangay-events/create");
   };
 
   const handleDelete = async (eventId) => {
@@ -27,53 +27,67 @@ const BarangayEvents = () => {
 
     if (window.confirm("Are you sure you want to delete this event?")) {
       await deleteBarangayEvent(eventId, token);
-      // Reload the list after deletion
-      fetchBarangayEvents(token).then(response => {
+      fetchBarangayEvents(token).then((response) => {
         setEvents(response.data);
       });
     }
   };
 
   return (
-    <div>
+    <div className="bg-gray-100 min-h-screen">
       <Header />
-      <h2>Barangay Events List</h2>
-      <button onClick={handleCreateButtonClick}>Create Event</button>
-      <table>
-        <thead>
-          <tr>
-            <th>Event Name</th>
-            <th>Description</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th>Location</th> {/* New column for location */}
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {events.map((event) => (
-            <tr key={event.id}>
-              <td>{event.eventName}</td>
-              <td>{event.description}</td>
-              <td>{event.startDate}</td>
-              <td>{event.endDate}</td>
-              <td>{event.location}</td> {/* Displaying location */}
-              <td>{event.status}</td>
-              <td>
-                <button
-                  onClick={() => navigate(`/barangay-events/update/${event.id}`)}
-                >
-                  Update
-                </button>
-                <button onClick={() => handleDelete(event.id)}>
-                  Delete
-                </button>
-              </td>
+      <div className="container mx-auto p-6">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">
+          Barangay Events List
+        </h2>
+        <button
+          onClick={handleCreateButtonClick}
+          className="mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Create Event
+        </button>
+        <table className="min-w-full table-auto bg-white shadow-md rounded">
+          <thead className="bg-gray-800 text-white">
+            <tr>
+              <th className="px-4 py-2">Event Name</th>
+              <th className="px-4 py-2">Description</th>
+              <th className="px-4 py-2">Start Date</th>
+              <th className="px-4 py-2">End Date</th>
+              <th className="px-4 py-2">Location</th>
+              <th className="px-4 py-2">Status</th>
+              <th className="px-4 py-2">Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {events.map((event) => (
+              <tr key={event.id} className="border-b">
+                <td className="px-4 py-2">{event.eventName}</td>
+                <td className="px-4 py-2">{event.description}</td>
+                <td className="px-4 py-2">{event.startDate}</td>
+                <td className="px-4 py-2">{event.endDate}</td>
+                <td className="px-4 py-2">{event.location}</td>
+                <td className="px-4 py-2">{event.status}</td>
+                <td className="px-4 py-2 flex space-x-2">
+                  <button
+                    onClick={() =>
+                      navigate(`/barangay-events/update/${event.id}`)
+                    }
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-3 rounded"
+                  >
+                    Update
+                  </button>
+                  <button
+                    onClick={() => handleDelete(event.id)}
+                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
