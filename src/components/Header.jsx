@@ -20,6 +20,8 @@ const Header = () => {
         <button onClick={() => navigate('/users')}>Users</button>
         <button onClick={() => navigate('/residents')}>Residents</button>
         <button onClick={() => navigate('/barangay-officials')}>Barangay Officials</button>
+        <button onClick={() => navigate('/barangay-projects')}>Barangay projects</button>
+        <button onClick={() => navigate('/barangay-events')}>Barangay events</button>
       </div>
       <div className="header-right">
         <button onClick={handleLogout}>Logout</button>

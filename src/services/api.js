@@ -141,4 +141,92 @@ export const deleteBarangayOfficial = (id, token) => {
   });
 };
 
+// Barangay Project-related API functions
+
+export const fetchBarangayProjects = (token) => {
+  return axios.get(`${API_URL}/barangay-projects`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const createBarangayProject = (projectData, token) => {
+  return axios.post(`${API_URL}/barangay-projects`, projectData, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const getBarangayProjectById = (id, token) => {
+  return axios.get(`${API_URL}/barangay-projects/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const updateBarangayProject = (id, projectData, token) => {
+  return axios.put(`${API_URL}/barangay-projects/${id}`, projectData, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const deleteBarangayProject = (id, token) => {
+  return axios.delete(`${API_URL}/barangay-projects/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+// Barangay Event-related API functions
+
+export const fetchBarangayEvents = (token) => {
+  return axios.get(`${API_URL}/barangay-events`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const createBarangayEvent = (eventData, token) => {
+  return axios.post(`${API_URL}/barangay-events`, eventData, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const getBarangayEventById = (id, token) => {
+  return axios.get(`${API_URL}/barangay-events/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const updateBarangayEvent = (id, eventData, token) => {
+  return axios.put(`${API_URL}/barangay-events/${id}`, eventData, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const deleteBarangayEvent = (id, token) => {
+  return axios.delete(`${API_URL}/barangay-events/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
 // Add more functions to interact with other endpoints

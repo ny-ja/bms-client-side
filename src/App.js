@@ -11,6 +11,12 @@ import UpdateResident from './pages/residents/UpdateResident';
 import BarangayOfficialsIndex from './pages/barangay_officials/BarangayOfficialsIndex';
 import CreateBarangayOfficial from './pages/barangay_officials/CreateBarangayOfficial';
 import UpdateBarangayOfficial from './pages/barangay_officials/UpdateBarangayOfficial';
+import BarangayProjectsIndex from './pages/barangay_projects/BarangayProjectsIndex';
+import CreateBarangayProject from './pages/barangay_projects/CreateBarangayProject';
+import UpdateBarangayProject from './pages/barangay_projects/UpdateBarangayProject';
+import BarangayEventsIndex from './pages/barangay_events/BarangayEventsIndex';
+import CreateBarangayEvent from './pages/barangay_events/CreateBarangayEvent';
+import UpdateBarangayEvent from './pages/barangay_events/UpdateBarangayEvent';
 
 const App = () => {
   return (
@@ -31,6 +37,14 @@ const App = () => {
         <Route path="/barangay-officials" element={<BarangayOfficialsIndex />} />
         <Route path="/barangay-officials/create" element={<CreateBarangayOfficial />} />
         <Route path="/barangay-officials/update/:officialId" element={<UpdateBarangayOfficial />} />
+
+        <Route path="/barangay-projects" element={<BarangayProjectsIndex />} />
+        <Route path="/barangay-projects/create" element={<CreateBarangayProject />} />
+        <Route path="/barangay-projects/update/:projectId" element={<UpdateBarangayProject />} />
+
+        <Route path="/barangay-events" element={<BarangayEventsIndex />} />
+        <Route path="/barangay-events/create" element={<CreateBarangayEvent />} />
+        <Route path="/barangay-events/update/:eventId" element={<UpdateBarangayEvent />} />
       </Routes>
     </Router>
   );
