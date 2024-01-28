@@ -8,7 +8,7 @@ const CreateUser = () => {
     name: "",
     email: "",
     password: "",
-    dateOfBirth: "", // Include other fields if your User model requires them
+    dateOfBirth: "",
   });
   const navigate = useNavigate();
 
@@ -84,7 +84,6 @@ const CreateUser = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Add other fields as necessary */}
           <button
             type="submit"
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

@@ -41,7 +41,6 @@ const CreateBarangayEvent = () => {
           onSubmit={handleSubmit}
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         >
-          {/* Event Name field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -58,7 +57,6 @@ const CreateBarangayEvent = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Description field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -74,7 +72,6 @@ const CreateBarangayEvent = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Start Date and End Date fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="mb-4">
               <label
@@ -109,7 +106,6 @@ const CreateBarangayEvent = () => {
               />
             </div>
           </div>
-          {/* Location and Organizer fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="mb-4">
               <label
@@ -144,7 +140,6 @@ const CreateBarangayEvent = () => {
               />
             </div>
           </div>
-          {/* Status field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -166,7 +161,6 @@ const CreateBarangayEvent = () => {
               <option value="Cancelled">Cancelled</option>
             </select>
           </div>
-          {/* Submit button */}
           <button
             type="submit"
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

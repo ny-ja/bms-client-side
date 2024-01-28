@@ -49,13 +49,13 @@ const BarangayEvents = () => {
         <table className="min-w-full table-auto bg-white shadow-md rounded">
           <thead className="bg-gray-800 text-white">
             <tr>
-              <th className="px-4 py-2">Event Name</th>
-              <th className="px-4 py-2">Description</th>
-              <th className="px-4 py-2">Start Date</th>
-              <th className="px-4 py-2">End Date</th>
-              <th className="px-4 py-2">Location</th>
-              <th className="px-4 py-2">Status</th>
-              <th className="px-4 py-2">Action</th>
+              <th className="px-4 py-2 text-left">Event Name</th>
+              <th className="px-4 py-2 text-left">Description</th>
+              <th className="px-4 py-2 text-left">Start Date</th>
+              <th className="px-4 py-2 text-left">End Date</th>
+              <th className="px-4 py-2 text-left">Location</th>
+              <th className="px-4 py-2 text-left">Status</th>
+              <th className="px-4 py-2 text-left">Action</th>
             </tr>
           </thead>
           <tbody>

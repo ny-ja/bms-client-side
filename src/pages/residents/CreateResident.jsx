@@ -44,7 +44,6 @@ const CreateResident = () => {
           onSubmit={handleSubmit}
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         >
-          {/* First Name field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -61,7 +60,6 @@ const CreateResident = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Middle Name field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -78,7 +76,6 @@ const CreateResident = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Last Name field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -95,7 +92,6 @@ const CreateResident = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Date of Birth field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -112,7 +108,6 @@ const CreateResident = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Address field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -129,7 +124,6 @@ const CreateResident = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Contact Number field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -146,7 +140,6 @@ const CreateResident = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Email field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -163,7 +156,6 @@ const CreateResident = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Occupation field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -180,7 +172,6 @@ const CreateResident = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Gender field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -201,7 +192,6 @@ const CreateResident = () => {
               <option value="Other">Other</option>
             </select>
           </div>
-          {/* Civil Status field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -223,7 +213,6 @@ const CreateResident = () => {
               <option value="Widowed">Widowed</option>
             </select>
           </div>
-          {/* Submit button */}
           <button
             type="submit"
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

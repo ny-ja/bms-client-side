@@ -52,11 +52,20 @@ const UpdateBarangayOfficial = () => {
     <div className="bg-gray-100 min-h-screen">
       <Header />
       <div className="container mx-auto p-6">
-        <h1 className="text-2xl font-bold text-gray-800 mb-4">Update Barangay Official</h1>
-        <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-          {/* First Name field */}
+        <h1 className="text-2xl font-bold text-gray-800 mb-4">
+          Update Barangay Official
+        </h1>
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        >
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="firstName">First Name:</label>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="firstName"
+            >
+              First Name:
+            </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="firstName"
@@ -66,10 +75,14 @@ const UpdateBarangayOfficial = () => {
               onChange={handleChange}
             />
           </div>
-  
-          {/* Middle Name field */}
+
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="middleName">Middle Name:</label>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="middleName"
+            >
+              Middle Name:
+            </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="middleName"
@@ -79,10 +92,14 @@ const UpdateBarangayOfficial = () => {
               onChange={handleChange}
             />
           </div>
-  
-          {/* Last Name field */}
+
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="lastName">Last Name:</label>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="lastName"
+            >
+              Last Name:
+            </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="lastName"
@@ -92,10 +109,14 @@ const UpdateBarangayOfficial = () => {
               onChange={handleChange}
             />
           </div>
-  
-          {/* Position field */}
+
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="position">Position:</label>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="position"
+            >
+              Position:
+            </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="position"
@@ -105,10 +126,14 @@ const UpdateBarangayOfficial = () => {
               onChange={handleChange}
             />
           </div>
-  
-          {/* Date of Birth field */}
+
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="dateOfBirth">Date of Birth:</label>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="dateOfBirth"
+            >
+              Date of Birth:
+            </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="dateOfBirth"
@@ -118,10 +143,14 @@ const UpdateBarangayOfficial = () => {
               onChange={handleChange}
             />
           </div>
-  
-          {/* Address field */}
+
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="address">Address:</label>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="address"
+            >
+              Address:
+            </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="address"
@@ -131,10 +160,14 @@ const UpdateBarangayOfficial = () => {
               onChange={handleChange}
             />
           </div>
-  
-          {/* Contact Number field */}
+
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contactNumber">Contact Number:</label>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="contactNumber"
+            >
+              Contact Number:
+            </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="contactNumber"
@@ -144,10 +177,14 @@ const UpdateBarangayOfficial = () => {
               onChange={handleChange}
             />
           </div>
-  
-          {/* Email field */}
+
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email:</label>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Email:
+            </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="email"
@@ -157,10 +194,14 @@ const UpdateBarangayOfficial = () => {
               onChange={handleChange}
             />
           </div>
-  
-          {/* Term Start field */}
+
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="termStart">Term Start:</label>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="termStart"
+            >
+              Term Start:
+            </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="termStart"
@@ -170,10 +211,14 @@ const UpdateBarangayOfficial = () => {
               onChange={handleChange}
             />
           </div>
-  
-          {/* Term End field */}
+
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="termEnd">Term End:</label>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="termEnd"
+            >
+              Term End:
+            </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="termEnd"
@@ -183,9 +228,11 @@ const UpdateBarangayOfficial = () => {
               onChange={handleChange}
             />
           </div>
-  
-          {/* Submit button */}
-          <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
             Update Official
           </button>
         </form>

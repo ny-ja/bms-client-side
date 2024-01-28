@@ -22,7 +22,7 @@ const BarangayOfficials = () => {
   }, []);
 
   const handleCreateButtonClick = () => {
-    navigate("/barangay-officials/create"); // Adjust the route as needed
+    navigate("/barangay-officials/create");
   };
 
   const handleDelete = async (officialId) => {
@@ -52,11 +52,11 @@ const BarangayOfficials = () => {
         <table className="min-w-full table-auto shadow-md rounded">
           <thead className="bg-gray-800 text-white">
             <tr>
-              <th className="px-4 py-2">Name</th>
-              <th className="px-4 py-2">Position</th>
-              <th className="px-4 py-2">Term Start</th>
-              <th className="px-4 py-2">Term End</th>
-              <th className="px-4 py-2">Action</th>
+              <th className="px-4 py-2 text-left">Name</th>
+              <th className="px-4 py-2 text-left">Position</th>
+              <th className="px-4 py-2 text-left">Term Start</th>
+              <th className="px-4 py-2 text-left">Term End</th>
+              <th className="px-4 py-2 text-left">Action</th>
             </tr>
           </thead>
           <tbody className="bg-white">

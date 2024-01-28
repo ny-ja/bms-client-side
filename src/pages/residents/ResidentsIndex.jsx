@@ -70,13 +70,13 @@ const Residents = () => {
         <table className="min-w-full table-auto shadow-md rounded">
           <thead className="bg-gray-800 text-white">
             <tr>
-              <th className="px-4 py-2">Name</th>
-              <th className="px-4 py-2">Address</th>
-              <th className="px-4 py-2">Contact Number</th>
-              <th className="px-4 py-2">Occupation</th>
-              <th className="px-4 py-2">Gender</th>
-              <th className="px-4 py-2">Civil Status</th>
-              <th className="px-4 py-2">Action</th>
+              <th className="px-4 py-2 text-left">Name</th>
+              <th className="px-4 py-2 text-left">Address</th>
+              <th className="px-4 py-2 text-left">Contact Number</th>
+              <th className="px-4 py-2 text-left">Occupation</th>
+              <th className="px-4 py-2 text-left">Gender</th>
+              <th className="px-4 py-2 text-left">Civil Status</th>
+              <th className="px-4 py-2 text-left">Action</th>
             </tr>
           </thead>
           <tbody className="bg-white">

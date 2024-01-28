@@ -56,7 +56,6 @@ const UpdateResident = () => {
           onSubmit={handleSubmit}
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         >
-          {/* Field blocks for each attribute */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -73,8 +72,6 @@ const UpdateResident = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Repeat for other fields */}
-          {/* Middle Name field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -91,7 +88,6 @@ const UpdateResident = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Last Name field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -108,7 +104,6 @@ const UpdateResident = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Date of Birth field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -125,7 +120,6 @@ const UpdateResident = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Address field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -142,7 +136,6 @@ const UpdateResident = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Contact Number field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -159,7 +152,6 @@ const UpdateResident = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Email field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -176,7 +168,6 @@ const UpdateResident = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Occupation field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -193,7 +184,6 @@ const UpdateResident = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Gender field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -214,7 +204,6 @@ const UpdateResident = () => {
               <option value="Other">Other</option>
             </select>
           </div>
-          {/* Civil Status field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -236,7 +225,6 @@ const UpdateResident = () => {
               <option value="Widowed">Widowed</option>
             </select>
           </div>
-          {/* Submit button */}
           <button
             type="submit"
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

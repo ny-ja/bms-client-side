@@ -57,7 +57,6 @@ const UpdateBarangayProject = () => {
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Project Name field */}
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -74,7 +73,6 @@ const UpdateBarangayProject = () => {
                 onChange={handleChange}
               />
             </div>
-            {/* Description field */}
             <div className="mb-4 col-span-2">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -90,7 +88,6 @@ const UpdateBarangayProject = () => {
                 onChange={handleChange}
               />
             </div>
-            {/* Start Date field */}
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -107,7 +104,6 @@ const UpdateBarangayProject = () => {
                 onChange={handleChange}
               />
             </div>
-            {/* End Date field */}
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -124,7 +120,6 @@ const UpdateBarangayProject = () => {
                 onChange={handleChange}
               />
             </div>
-            {/* Status field */}
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -146,7 +141,6 @@ const UpdateBarangayProject = () => {
                 <option value="Cancelled">Cancelled</option>
               </select>
             </div>
-            {/* Budget field */}
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -163,7 +157,6 @@ const UpdateBarangayProject = () => {
                 onChange={handleChange}
               />
             </div>
-            {/* Created By field */}
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"

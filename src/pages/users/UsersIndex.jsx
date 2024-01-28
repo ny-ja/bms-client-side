@@ -49,9 +49,9 @@ const Users = () => {
         <table className="min-w-full table-auto">
           <thead className="bg-gray-800 text-white">
             <tr>
-              <th className="px-4 py-2">Name</th>
-              <th className="px-4 py-2">Email</th>
-              <th className="px-4 py-2">Action</th>
+              <th className="px-4 py-2 text-left">Name</th>
+              <th className="px-4 py-2 text-left">Email</th>
+              <th className="px-4 py-2 text-left">Action</th>
             </tr>
           </thead>
           <tbody className="bg-white">

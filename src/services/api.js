@@ -14,6 +14,7 @@ export const loginUser = (email, password) => {
   );
 };
 
+// User-related API functions
 export const fetchUsers = (token) => {
   return axios.get(`${API_URL}/users`, {
     headers: {
@@ -98,7 +99,6 @@ export const deleteResident = (id, token) => {
 };
 
 // Barangay Official-related API functions
-
 export const fetchBarangayOfficials = (token) => {
   return axios.get(`${API_URL}/barangay-officials`, {
     headers: {
@@ -142,7 +142,6 @@ export const deleteBarangayOfficial = (id, token) => {
 };
 
 // Barangay Project-related API functions
-
 export const fetchBarangayProjects = (token) => {
   return axios.get(`${API_URL}/barangay-projects`, {
     headers: {
@@ -186,7 +185,6 @@ export const deleteBarangayProject = (id, token) => {
 };
 
 // Barangay Event-related API functions
-
 export const fetchBarangayEvents = (token) => {
   return axios.get(`${API_URL}/barangay-events`, {
     headers: {
@@ -228,5 +226,3 @@ export const deleteBarangayEvent = (id, token) => {
     },
   });
 };
-
-// Add more functions to interact with other endpoints

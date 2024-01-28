@@ -44,7 +44,6 @@ const CreateBarangayOfficial = () => {
           onSubmit={handleSubmit}
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         >
-          {/* First Name field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -61,7 +60,6 @@ const CreateBarangayOfficial = () => {
               onChange={handleChange}
             />
           </div>
-          {/* Middle Name field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -79,7 +77,6 @@ const CreateBarangayOfficial = () => {
             />
           </div>
 
-          {/* Last Name field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -97,7 +94,6 @@ const CreateBarangayOfficial = () => {
             />
           </div>
 
-          {/* Position field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -115,7 +111,6 @@ const CreateBarangayOfficial = () => {
             />
           </div>
 
-          {/* Date of Birth field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -133,7 +128,6 @@ const CreateBarangayOfficial = () => {
             />
           </div>
 
-          {/* Address field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -151,7 +145,6 @@ const CreateBarangayOfficial = () => {
             />
           </div>
 
-          {/* Contact Number field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -169,7 +162,6 @@ const CreateBarangayOfficial = () => {
             />
           </div>
 
-          {/* Email field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -187,7 +179,6 @@ const CreateBarangayOfficial = () => {
             />
           </div>
 
-          {/* Term Start field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -205,7 +196,6 @@ const CreateBarangayOfficial = () => {
             />
           </div>
 
-          {/* Term End field */}
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
