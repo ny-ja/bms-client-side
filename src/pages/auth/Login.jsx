@@ -29,11 +29,11 @@ const Login = () => {
           onSubmit={handleSubmit}
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         >
-          <h2 className="block text-gray-700 text-lg font-bold mb-2">Login</h2>
+          <h2 className="text-xs font-medium tracking-wider text-left text-gray-500 uppercase mb-2">Login</h2>
           {error && <p className="text-red-500 text-xs italic">{error}</p>}
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="text-xs font-medium tracking-wider text-left text-gray-500 uppercase mb-2"
               htmlFor="email"
             >
               Email:
@@ -48,7 +48,7 @@ const Login = () => {
           </div>
           <div className="mb-6">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="text-xs font-medium tracking-wider text-left text-gray-500 uppercase mb-2"
               htmlFor="password"
             >
               Password:
