@@ -14,6 +14,14 @@ export const loginUser = (email, password) => {
   );
 };
 
+export const getCurrentAuthenticatedUser = (token) => {
+  return axios.get(`${API_URL}/users/me`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
 // User-related API functions
 export const fetchUsers = (token) => {
   return axios.get(`${API_URL}/users`, {

@@ -1,19 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { getCurrentAuthenticatedUser } from "../services/api";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  // Update the state to include firstName, middleName, and lastName
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+  });
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/");
   };
-
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
-  const buttonRef = useRef(null);
-
-  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -26,8 +29,26 @@ const Navbar = () => {
     };
 
     document.addEventListener("mousedown", handleOutsideClick);
+
+    // Fetch the current authenticated user's details
+    const token = localStorage.getItem("token");
+    if (token) {
+      getCurrentAuthenticatedUser(token)
+        .then((response) => {
+          const { name, email } = response.data;
+          // Set user details including firstName, middleName, and lastName
+          setUser({ name, email });
+        })
+        .catch((error) => {
+          console.error("Error fetching user details:", error);
+          // Handle error appropriately
+        });
+    }
+
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, []);
+
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
   return (
     <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
@@ -76,7 +97,7 @@ const Navbar = () => {
                   <span className="sr-only">Open user menu</span>
                   <div className="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
                     <span className="font-medium text-gray-600 dark:text-gray-300">
-                      A
+                      {user.name ? user.name.charAt(0).toUpperCase() : "A"}
                     </span>
                   </div>
                 </button>
@@ -90,13 +111,13 @@ const Navbar = () => {
               >
                 <div class="px-4 py-3" role="none">
                   <p class="text-sm text-gray-900 dark:text-white" role="none">
-                    Neil Sims
+                    {user.name}
                   </p>
                   <p
                     class="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
                     role="none"
                   >
-                    neil.sims@flowbite.com
+                    {user.email}
                   </p>
                 </div>
                 <ul class="py-1" role="none">
