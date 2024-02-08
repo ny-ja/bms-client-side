@@ -75,7 +75,7 @@ const Home = () => {
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
-                      class="text-indigo-500 w-12 h-12 mb-3 inline-block"
+                      class="text-gray-500 w-12 h-12 mb-3 inline-block"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -98,7 +98,7 @@ const Home = () => {
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
-                      class="text-indigo-500 w-12 h-12 mb-3 inline-block"
+                      class="text-gray-500 w-12 h-12 mb-3 inline-block"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -121,7 +121,7 @@ const Home = () => {
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
-                      class="text-indigo-500 w-12 h-12 mb-3 inline-block"
+                      class="text-gray-500 w-12 h-12 mb-3 inline-block"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -144,7 +144,7 @@ const Home = () => {
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
-                      class="text-indigo-500 w-12 h-12 mb-3 inline-block"
+                      class="text-gray-500 w-12 h-12 mb-3 inline-block"
                       viewBox="0 0 24 24"
                     >
                       <path
