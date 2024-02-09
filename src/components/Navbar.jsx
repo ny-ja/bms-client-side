@@ -78,7 +78,7 @@ const Navbar = () => {
               </svg>
             </button>
             <button class="flex ms-2 md:me-24">
-              <img src="/bms-logo.png" class="h-8 me-3" alt="FlowBite Logo" />
+              <img src="/bms-logo.png" class="h-8 me-3" alt="BMS Logo" />
               <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
                 BMS
               </span>

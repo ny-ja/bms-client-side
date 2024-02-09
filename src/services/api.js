@@ -234,3 +234,46 @@ export const deleteBarangayEvent = (id, token) => {
     },
   });
 };
+
+// Certification-related API functions
+export const fetchCertifications = (token) => {
+  return axios.get(`${API_URL}/certifications`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const createCertification = (certificationData, token) => {
+  return axios.post(`${API_URL}/certifications`, certificationData, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const getCertificationById = (id, token) => {
+  return axios.get(`${API_URL}/certifications/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const updateCertification = (id, certificationData, token) => {
+  return axios.put(`${API_URL}/certifications/${id}`, certificationData, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const deleteCertification = (id, token) => {
+  return axios.delete(`${API_URL}/certifications/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
